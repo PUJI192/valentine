@@ -69,11 +69,6 @@
   <button id="no">NO 🙄</button>
 </div>
 
-<!-- 🎶 AUDIO (hidden) -->
-<audio id="valentineSong">
-  <source src="When_Chai_Met_Toast_-_Yellow_Paper_Daisy_(mp3.pm).mp3" type="audio/mpeg">
-</audio>
-
 <script>
   /* floating hearts */
   const hearts = document.querySelector('.hearts');
@@ -87,9 +82,7 @@
     setTimeout(() => h.remove(), 6000);
   }, 300);
 
-  const song = document.getElementById("valentineSong");
-
-  // block NO path
+  // NO path → force YES
   document.getElementById("no").onclick = () => {
     document.getElementById("box").innerHTML = `
       <h2>Hehe 😏</h2>
@@ -101,20 +94,11 @@
     `;
   };
 
-  // YES logic with timed music
+  // YES path → final message
   function sayYes() {
-    // start at 1:08
-    song.currentTime = 68;
-    song.play();
-
-    // stop at 1:56
-    setTimeout(() => {
-      song.pause();
-    }, (116 - 68) * 1000); // 48 seconds
-
     document.getElementById("box").innerHTML = `
-      <h2>💛🌼</h2>
-      <h3>Happy Valentine’s Day</h3>
+      <h2>💖</h2>
+      <h3>Happy Valentine’s Day 💕</h3>
     `;
   }
 

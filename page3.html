@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Question 💌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff6a88, #ff99ac, #ffd1dc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      padding: 32px;
+      border-radius: 24px;
+      max-width: 340px;
+      z-index: 2;
+    }
+    h2 {
+      font-family: 'Pacifico', cursive;
+      color: #ff4b6e;
+    }
+    button {
+      margin: 12px;
+      padding: 12px 26px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #yes {
+      background: #ff4b6e;
+      color: white;
+    }
+    #no {
+      background: #eee;
+    }
+    .hearts span {
+      position: absolute;
+      color: #ff4b6e;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-800px); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="box" id="box">
+  <h2>So Rajesh Reddy 😌</h2>
+  <h3>Will you be my Valentine? 💖</h3>
+
+  <button id="yes">YES 💕</button>
+  <button id="no">NO 🙄</button>
+</div>
+
+<script>
+  const hearts3 = document.querySelector('.hearts');
+  setInterval(() => {
+    const h = document.createElement('span');
+    h.innerHTML = '❤️';
+    h.style.left = Math.random() * 100 + 'vw';
+    h.style.bottom = '-20px';
+    h.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    hearts3.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+  }, 300);
+
+  document.getElementById("no").onclick = () => {
+    document.getElementById("box").innerHTML = `
+      <h2>Hehe 😏</h2>
+      <p>You’re stuck here.</p>
+      <p>You can only say yes 💖</p>
+      <button onclick="sayYes()" style="background:#ff4b6e;color:white;padding:12px 26px;border:none;border-radius:30px;">
+        YES 💕
+      </button>
+    `;
+  };
+
+  function sayYes() {
+    document.getElementById("box").innerHTML = `
+      <h2>💖</h2>
+      <h3>Happy Valentine’s Day 💕</h3>
+    `;
+  }
+
+  document.getElementById("yes").onclick = sayYes;
+</script>
+
+</body>
+</html>

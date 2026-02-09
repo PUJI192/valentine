@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wait 😏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      padding: 28px;
+      border-radius: 22px;
+      max-width: 340px;
+      z-index: 2;
+    }
+    img {
+      width: 100%;
+      border-radius: 14px;
+      margin: 18px 0;
+    }
+    a {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 22px;
+      background: #ff4b6e;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .hearts span {
+      position: absolute;
+      color: #ff4b6e;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-800px); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="box">
+  <p>But wait 😏</p>
+  <p>I found this message…</p>
+
+  <img src="girlfriend-text.png" alt="text message">
+
+  <p>
+    Calling me <b>girlfriend</b> already?
+  </p>
+
+  <p>
+    I’ll take this as you asking me indirectly and
+  </p>
+
+  <p>
+    I’ll excuse you for this time 😌
+  </p>
+
+  <a href="page3.html">So →</a>
+</div>
+
+<script>
+  const hearts2 = document.querySelector('.hearts');
+  setInterval(() => {
+    const h = document.createElement('span');
+    h.innerHTML = '❤️';
+    h.style.left = Math.random() * 100 + 'vw';
+    h.style.bottom = '-20px';
+    h.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    hearts2.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+  }, 300);
+</script>
+
+</body>
+</html>

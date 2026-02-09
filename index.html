@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Okay listen 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(
+        135deg,
+        #fde2e4,
+        #f8edeb,
+        #fae1dd
+      );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 32px;
+      border-radius: 24px;
+      max-width: 330px;
+      z-index: 2;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      font-family: 'Pacifico', cursive;
+      color: #d1495b;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #444;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 26px;
+      background: linear-gradient(135deg, #e5989b, #f4acb7);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 22px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+
+    .hearts span {
+      position: absolute;
+      color: #c9184a;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 0.9; }
+      100% { transform: translateY(-800px); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="box">
+  <h2>Okay listen 😌</h2>
+
+  <p>
+    Someone still hasn’t asked me properly.
+  </p>
+
+  <p>
+    So, I thought… 
+  </p>
+
+
+  <p>
+    Why not make it my move?
+  </p>
+
+  <a href="page2.html">❤️</a>
+</div>
+
+<script>
+  const hearts1 = document.querySelector('.hearts');
+  setInterval(() => {
+    const h = document.createElement('span');
+    h.innerHTML = '❤️';
+    h.style.left = Math.random() * 100 + 'vw';
+    h.style.bottom = '-20px';
+    h.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    hearts1.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+  }, 350);
+</script>
+
+</body>
+</html>
